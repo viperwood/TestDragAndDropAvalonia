@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TestDragAndDrop.MainWindow"
+        Title="TestDragAndDrop">
+    <StackPanel Orientation="Vertical" Spacing="4">
+        <WrapPanel HorizontalAlignment="Center">
+            
+            
+            <!--Объект для перетаскивания-->
+            <StackPanel Margin="8"
+                        MaxWidth="160">
+                <Border Name="DragMeText"
+                        Padding="16"
+                        BorderBrush="CornflowerBlue"
+                        BorderThickness="2">
+                    <TextBlock Name="DragStateText" TextWrapping="Wrap">Drag Me (text)</TextBlock>
+                </Border>
+            </StackPanel>
+            
+            <!--Поле в которое надо перетащить-->
+            <StackPanel Margin="8"
+                        Orientation="Horizontal"
+                        Spacing="16">
+                <Border Name="MoveTarget"
+                        Padding="16"
+                        MaxWidth="260"
+                        Background="CornflowerBlue"
+                        DragDrop.AllowDrop="True">
+                    <TextBlock TextWrapping="Wrap">Drop some text or files here (Move)</TextBlock>
+                </Border>
+            </StackPanel>
+            
+            
+            
+        </WrapPanel>
+        <TextBlock x:Name="DropState" TextWrapping="Wrap" />
+    </StackPanel>
+</Window>
